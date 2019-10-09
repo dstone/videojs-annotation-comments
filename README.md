@@ -144,6 +144,9 @@ plugin.fire('addingAnnotation');
 plugin.fire('cancelAddingAnnotation');
  // toggleAnnotationMode : toggle annotation mode to alternative on/off value
 plugin.fire('toggleAnnotations');
+
+plugin.fire('updateAnnotation', {id: 1, annotation: {}});
+plugin.fire('updateComment', {annotationId: 1, commentId: 1, comment:{}});
 ```
 
  ##### Supported Internally Fired Events:
@@ -199,6 +202,15 @@ plugin.on('annotationModeEnabled', (event) => {
 plugin.on('annotationModeDisabled', (event) => {
     // do something
 });
+ // comentCreated: Fired when a comment is created in reply to an annotation
+plugin.on('commentCreated', (event) => {
+    var annotation = event.detail.annotation;
+    var comment = event.detail.comment;
+})
+ // annotationCreated: Fired when an annotation is created
+plugin.on('annotationCreated', (event) => {
+    var annotation = event.detail;
+})
 ```
 
  ### Develop and Build

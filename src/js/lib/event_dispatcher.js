@@ -36,6 +36,13 @@ const EventRegistry = {
         destroyComment: (event, _this) => {
             let comment = _this.findComment(event.detail.id);
             if(comment) comment.commentList.destroyComment(event);
+        },
+        updateAnnotation: (event, _this) => {
+            _this.updateAnnotation( event.detail.id, event.detail.annotation );
+        },
+        updateComment: (event, _this) => {
+            let annotation = _this.findAnnotation(event.detail.annotationId);
+            if (annotation) annotation.commentList.updateComment( event.detail.commentId, event.detail.comment );
         }
     },
     Controls: {

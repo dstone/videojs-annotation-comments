@@ -101,7 +101,21 @@ module.exports = class CommentList extends PlayerUIComponent {
             this.closeNewComment();
         }
 
+        this.plugin.fire( 'commentCreated', {
+            annotation: this.annotation.data,
+            comment: comment.data
+        } )
         this.plugin.annotationState.stateChanged();
+    }
+
+    updateComment(commentId, commentData) {
+        let comment = this.comments.find((c) => c.id === commentId);
+        comment.id = commentData.id;
+        comment.body = commentData.body;
+        if ( this.annotation.isActive) {
+            this.reRender();
+        }
+
     }
 
     // Cancel comment adding process

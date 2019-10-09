@@ -72,6 +72,7 @@ module.exports = class AnnotationState extends PlayerComponent {
     addNewAnnotation (annotation) {
         this._annotations.push(annotation);
         this.openAnnotation(annotation, true, true, false, true);
+        this.plugin.fire( 'annotationCreated', annotation.data );
         this.stateChanged();
     }
 
@@ -102,6 +103,14 @@ module.exports = class AnnotationState extends PlayerComponent {
         this._annotations.splice(i, 1);
         this.stateChanged();
         this.plugin.fire('annotationDeleted', {id});
+    }
+
+    updateAnnotation( id, annotationData ) {
+        const annotation = this.findAnnotation(id);
+        if (annotation) {
+            annotation.update(annotationData);
+            //this.rebuildAnnotationTimeMap();
+        }
     }
 
     // Set the live annotation based on current video time

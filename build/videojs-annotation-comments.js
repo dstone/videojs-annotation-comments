@@ -16468,6 +16468,27 @@ module.exports = function (_PlayerUIComponent) {
     }
 
     _createClass(Annotation, [{
+        key: "update",
+        value: function update(data) {
+            // teardown components
+            this.marker.teardown();
+            if (this.commentList) this.commentList.teardown(true);
+            if (this.annotationShape) this.annotationShape.teardown();
+
+            // replace data and rebuild
+            this.id = data.id;
+            this.range = data.range;
+            this.shape = data.shape;
+            this.secondsActive = this.buildSecondsActiveArray();
+            this.buildComments(data);
+            this.buildMarker();
+            this.buildShape();
+            this.bindEvents();
+            if (this.isOpen) {
+                this.open(false, false, false);
+            }
+        }
+    }, {
         key: "buildComments",
         value: function buildComments(data) {
             this.commentList = new CommentList({ "comments": data.comments, "annotation": this }, this.player);
@@ -16691,6 +16712,7 @@ module.exports = function (_PlayerComponent) {
         value: function addNewAnnotation(annotation) {
             this._annotations.push(annotation);
             this.openAnnotation(annotation, true, true, false, true);
+            this.plugin.fire('annotationCreated', annotation.data);
             this.stateChanged();
         }
 
@@ -16724,6 +16746,15 @@ module.exports = function (_PlayerComponent) {
             this._annotations.splice(i, 1);
             this.stateChanged();
             this.plugin.fire('annotationDeleted', { id: id });
+        }
+    }, {
+        key: "updateAnnotation",
+        value: function updateAnnotation(id, annotationData) {
+            var annotation = this.findAnnotation(id);
+            if (annotation) {
+                annotation.update(annotationData);
+                //this.rebuildAnnotationTimeMap();
+            }
         }
 
         // Set the live annotation based on current video time
@@ -17228,7 +17259,23 @@ module.exports = function (_PlayerUIComponent) {
                 this.closeNewComment();
             }
 
+            this.plugin.fire('commentCreated', {
+                annotation: this.annotation.data,
+                comment: comment.data
+            });
             this.plugin.annotationState.stateChanged();
+        }
+    }, {
+        key: "updateComment",
+        value: function updateComment(commentId, commentData) {
+            var comment = this.comments.find(function (c) {
+                return c.id === commentId;
+            });
+            comment.id = commentData.id;
+            comment.body = commentData.body;
+            if (this.annotation.isActive) {
+                this.reRender();
+            }
         }
 
         // Cancel comment adding process
@@ -18287,6 +18334,13 @@ var EventRegistry = {
         destroyComment: function destroyComment(event, _this) {
             var comment = _this.findComment(event.detail.id);
             if (comment) comment.commentList.destroyComment(event);
+        },
+        updateAnnotation: function updateAnnotation(event, _this) {
+            _this.updateAnnotation(event.detail.id, event.detail.annotation);
+        },
+        updateComment: function updateComment(event, _this) {
+            var annotation = _this.findAnnotation(event.detail.annotationId);
+            if (annotation) annotation.commentList.updateComment(event.detail.commentId, event.detail.comment);
         }
     },
     Controls: {
