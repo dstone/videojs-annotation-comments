@@ -43,7 +43,8 @@ module.exports = class Comment extends PlayerUIComponent {
                 id:         this.id,
                 body:       this.body,
                 meta:       this.meta,
-                timeSince:  this.timeSince
+                timeSince:  this.timeSince,
+                disableDelete: this.plugin.options.disableDelete
             }
         );
     }

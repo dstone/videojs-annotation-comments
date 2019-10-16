@@ -1,5 +1,7 @@
 var Handlebars = require("handlebars/runtime");
- exports["comment"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+ exports["comment"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return "            <span class=\"vac-delete-comment\">&nbsp;&nbsp;X</span>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<div class=\"vac-comment\" data-id=\""
@@ -8,7 +10,9 @@ var Handlebars = require("handlebars/runtime");
     + alias4(container.lambda(((stack1 = (depth0 != null ? depth0.meta : depth0)) != null ? stack1.user_name : stack1), depth0))
     + "</div>\n    <div class=\"vac-timestamp\">"
     + alias4(((helper = (helper = helpers.timeSince || (depth0 != null ? depth0.timeSince : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"timeSince","hash":{},"data":data}) : helper)))
-    + "\n      <span class=\"vac-delete-comment\">&nbsp;&nbsp;X</span>\n    </div>\n  </div>\n  <div class=\"vac-comment-body\">\n    "
+    + "\n"
+    + ((stack1 = helpers.unless.call(alias1,(depth0 != null ? depth0.disableDelete : depth0),{"name":"unless","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "    </div>\n  </div>\n  <div class=\"vac-comment-body\">\n    "
     + alias4((helpers.breaklines || (depth0 && depth0.breaklines) || alias2).call(alias1,(depth0 != null ? depth0.body : depth0),{"name":"breaklines","hash":{},"data":data}))
     + "\n  </div>\n</div>\n";
 },"useData":true});
@@ -18,6 +22,8 @@ exports["comment_list"] = Handlebars.template({"1":function(container,depth0,hel
   return "      "
     + ((stack1 = container.lambda(blockParams[0][0], depth0)) != null ? stack1 : "")
     + "\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    return "            <a class=\"vac-delete-annotation\">DELETE</a> |\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
@@ -25,7 +31,9 @@ exports["comment_list"] = Handlebars.template({"1":function(container,depth0,hel
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.commentsHTML : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
     + "    <div class=\"vac-reply-btn vac-button\">ADD REPLY</div>\n    <div class=\"vac-add-new-shapebox\"></div>\n  </div>\n  <div class=\"vac-comments-control-bar\">\n    <div class=\"vac-range\"><b>@</b> "
     + container.escapeExpression(((helper = (helper = helpers.rangeStr || (depth0 != null ? depth0.rangeStr : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"rangeStr","hash":{},"data":data,"blockParams":blockParams}) : helper)))
-    + "</div>\n    <div class=\"vac-control-buttons\">\n      <a class=\"vac-delete-annotation\">DELETE</a> | <a class=\"vac-close-comment-list\">CLOSE</a>\n    </div>\n  </div>\n</div>\n";
+    + "</div>\n    <div class=\"vac-control-buttons\">\n"
+    + ((stack1 = helpers.unless.call(alias1,(depth0 != null ? depth0.disableDelete : depth0),{"name":"unless","hash":{},"fn":container.program(3, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
+    + "       <a class=\"vac-close-comment-list\">CLOSE</a>\n    </div>\n  </div>\n</div>\n";
 },"useData":true,"useBlockParams":true});
 exports["controls"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1;

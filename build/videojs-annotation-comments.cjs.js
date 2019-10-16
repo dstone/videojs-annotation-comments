@@ -16119,7 +16119,8 @@ module.exports = function (videojs) {
         showFullScreen: true,
         showMarkerShapeAndTooltips: true,
         internalCommenting: true,
-        startInAnnotationMode: false
+        startInAnnotationMode: false,
+        disableDelete: false
     });
 
     return function (_Plugin) {
@@ -16316,7 +16317,9 @@ module.exports = function (videojs) {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var Handlebars = require("handlebars/runtime");
-exports["comment"] = Handlebars.template({ "compiler": [7, ">= 4.0.0"], "main": function main(container, depth0, helpers, partials, data) {
+exports["comment"] = Handlebars.template({ "1": function _(container, depth0, helpers, partials, data) {
+        return "            <span class=\"vac-delete-comment\">&nbsp;&nbsp;X</span>\n";
+    }, "compiler": [7, ">= 4.0.0"], "main": function main(container, depth0, helpers, partials, data) {
         var stack1,
             helper,
             alias1 = depth0 != null ? depth0 : container.nullContext || {},
@@ -16324,18 +16327,20 @@ exports["comment"] = Handlebars.template({ "compiler": [7, ">= 4.0.0"], "main": 
             alias3 = "function",
             alias4 = container.escapeExpression;
 
-        return "<div class=\"vac-comment\" data-id=\"" + alias4((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2, (typeof helper === "undefined" ? "undefined" : _typeof(helper)) === alias3 ? helper.call(alias1, { "name": "id", "hash": {}, "data": data }) : helper)) + "\">\n  <div class=\"vac-comment-header\">\n    <div class=\"vac-author-name\">" + alias4(container.lambda((stack1 = depth0 != null ? depth0.meta : depth0) != null ? stack1.user_name : stack1, depth0)) + "</div>\n    <div class=\"vac-timestamp\">" + alias4((helper = (helper = helpers.timeSince || (depth0 != null ? depth0.timeSince : depth0)) != null ? helper : alias2, (typeof helper === "undefined" ? "undefined" : _typeof(helper)) === alias3 ? helper.call(alias1, { "name": "timeSince", "hash": {}, "data": data }) : helper)) + "\n      <span class=\"vac-delete-comment\">&nbsp;&nbsp;X</span>\n    </div>\n  </div>\n  <div class=\"vac-comment-body\">\n    " + alias4((helpers.breaklines || depth0 && depth0.breaklines || alias2).call(alias1, depth0 != null ? depth0.body : depth0, { "name": "breaklines", "hash": {}, "data": data })) + "\n  </div>\n</div>\n";
+        return "<div class=\"vac-comment\" data-id=\"" + alias4((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2, (typeof helper === "undefined" ? "undefined" : _typeof(helper)) === alias3 ? helper.call(alias1, { "name": "id", "hash": {}, "data": data }) : helper)) + "\">\n  <div class=\"vac-comment-header\">\n    <div class=\"vac-author-name\">" + alias4(container.lambda((stack1 = depth0 != null ? depth0.meta : depth0) != null ? stack1.user_name : stack1, depth0)) + "</div>\n    <div class=\"vac-timestamp\">" + alias4((helper = (helper = helpers.timeSince || (depth0 != null ? depth0.timeSince : depth0)) != null ? helper : alias2, (typeof helper === "undefined" ? "undefined" : _typeof(helper)) === alias3 ? helper.call(alias1, { "name": "timeSince", "hash": {}, "data": data }) : helper)) + "\n" + ((stack1 = helpers.unless.call(alias1, depth0 != null ? depth0.disableDelete : depth0, { "name": "unless", "hash": {}, "fn": container.program(1, data, 0), "inverse": container.noop, "data": data })) != null ? stack1 : "") + "    </div>\n  </div>\n  <div class=\"vac-comment-body\">\n    " + alias4((helpers.breaklines || depth0 && depth0.breaklines || alias2).call(alias1, depth0 != null ? depth0.body : depth0, { "name": "breaklines", "hash": {}, "data": data })) + "\n  </div>\n</div>\n";
     }, "useData": true });
 exports["comment_list"] = Handlebars.template({ "1": function _(container, depth0, helpers, partials, data, blockParams) {
         var stack1;
 
         return "      " + ((stack1 = container.lambda(blockParams[0][0], depth0)) != null ? stack1 : "") + "\n";
+    }, "3": function _(container, depth0, helpers, partials, data) {
+        return "            <a class=\"vac-delete-annotation\">DELETE</a> |\n";
     }, "compiler": [7, ">= 4.0.0"], "main": function main(container, depth0, helpers, partials, data, blockParams) {
         var stack1,
             helper,
             alias1 = depth0 != null ? depth0 : container.nullContext || {};
 
-        return "<div class=\"vac-comments-container\">\n  <div class=\"vac-comments-wrap\">\n" + ((stack1 = helpers.each.call(alias1, depth0 != null ? depth0.commentsHTML : depth0, { "name": "each", "hash": {}, "fn": container.program(1, data, 1, blockParams), "inverse": container.noop, "data": data, "blockParams": blockParams })) != null ? stack1 : "") + "    <div class=\"vac-reply-btn vac-button\">ADD REPLY</div>\n    <div class=\"vac-add-new-shapebox\"></div>\n  </div>\n  <div class=\"vac-comments-control-bar\">\n    <div class=\"vac-range\"><b>@</b> " + container.escapeExpression((helper = (helper = helpers.rangeStr || (depth0 != null ? depth0.rangeStr : depth0)) != null ? helper : helpers.helperMissing, typeof helper === "function" ? helper.call(alias1, { "name": "rangeStr", "hash": {}, "data": data, "blockParams": blockParams }) : helper)) + "</div>\n    <div class=\"vac-control-buttons\">\n      <a class=\"vac-delete-annotation\">DELETE</a> | <a class=\"vac-close-comment-list\">CLOSE</a>\n    </div>\n  </div>\n</div>\n";
+        return "<div class=\"vac-comments-container\">\n  <div class=\"vac-comments-wrap\">\n" + ((stack1 = helpers.each.call(alias1, depth0 != null ? depth0.commentsHTML : depth0, { "name": "each", "hash": {}, "fn": container.program(1, data, 1, blockParams), "inverse": container.noop, "data": data, "blockParams": blockParams })) != null ? stack1 : "") + "    <div class=\"vac-reply-btn vac-button\">ADD REPLY</div>\n    <div class=\"vac-add-new-shapebox\"></div>\n  </div>\n  <div class=\"vac-comments-control-bar\">\n    <div class=\"vac-range\"><b>@</b> " + container.escapeExpression((helper = (helper = helpers.rangeStr || (depth0 != null ? depth0.rangeStr : depth0)) != null ? helper : helpers.helperMissing, typeof helper === "function" ? helper.call(alias1, { "name": "rangeStr", "hash": {}, "data": data, "blockParams": blockParams }) : helper)) + "</div>\n    <div class=\"vac-control-buttons\">\n" + ((stack1 = helpers.unless.call(alias1, depth0 != null ? depth0.disableDelete : depth0, { "name": "unless", "hash": {}, "fn": container.program(3, data, 0, blockParams), "inverse": container.noop, "data": data, "blockParams": blockParams })) != null ? stack1 : "") + "       <a class=\"vac-close-comment-list\">CLOSE</a>\n    </div>\n  </div>\n</div>\n";
     }, "useData": true, "useBlockParams": true });
 exports["controls"] = Handlebars.template({ "1": function _(container, depth0, helpers, partials, data) {
         var stack1;
@@ -17064,7 +17069,8 @@ module.exports = function (_PlayerUIComponent) {
                 id: this.id,
                 body: this.body,
                 meta: this.meta,
-                timeSince: this.timeSince
+                timeSince: this.timeSince,
+                disableDelete: this.plugin.options.disableDelete
             });
         }
 
@@ -17199,6 +17205,7 @@ module.exports = function (_PlayerUIComponent) {
         key: "render",
         value: function render() {
             this.$el = $(this.renderTemplate(commentListTemplateName, {
+                disableDelete: this.plugin.options.disableDelete,
                 commentsHTML: this.comments.map(function (c) {
                     return c.HTML;
                 }),

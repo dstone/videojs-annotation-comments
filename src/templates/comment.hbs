@@ -2,7 +2,9 @@
   <div class="vac-comment-header">
     <div class="vac-author-name">{{meta.user_name}}</div>
     <div class="vac-timestamp">{{timeSince}}
-      <span class="vac-delete-comment">&nbsp;&nbsp;X</span>
+        {{#unless disableDelete}}
+            <span class="vac-delete-comment">&nbsp;&nbsp;X</span>
+        {{/unless}}
     </div>
   </div>
   <div class="vac-comment-body">

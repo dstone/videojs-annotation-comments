@@ -9,7 +9,10 @@
   <div class="vac-comments-control-bar">
     <div class="vac-range"><b>@</b> {{rangeStr}}</div>
     <div class="vac-control-buttons">
-      <a class="vac-delete-annotation">DELETE</a> | <a class="vac-close-comment-list">CLOSE</a>
+        {{#unless disableDelete}}
+            <a class="vac-delete-annotation">DELETE</a> |
+        {{/unless}}
+       <a class="vac-close-comment-list">CLOSE</a>
     </div>
   </div>
 </div>

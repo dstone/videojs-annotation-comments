@@ -50,6 +50,7 @@ module.exports = class CommentList extends PlayerUIComponent {
         this.$el = $(this.renderTemplate(
             commentListTemplateName,
             {
+                disableDelete: this.plugin.options.disableDelete,
                 commentsHTML: this.comments.map((c) => c.HTML),
                 rangeStr: Utils.humanTime(this.annotation.range)
             }
