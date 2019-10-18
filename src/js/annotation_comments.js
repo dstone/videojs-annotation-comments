@@ -154,9 +154,10 @@ module.exports = (videojs) => {
 
         // Teardown all components, remove all listeners, and remove elements from DOM
         dispose () {
-            this.controls = this.controls.teardown();
-            this.annotationState = this.annotationState.teardown();
-            this.eventDispatcher = this.eventDispatcher.teardown();
+            // prevent type errors if dispose occurs before initialization
+            if ( !!this.controls ) this.controls = this.controls.teardown();
+            if ( !!this.annotationState ) this.annotationState = this.annotationState.teardown();
+            if ( !!this.eventDispatcher ) this.eventDispatcher = this.eventDispatcher.teardown();
             this.teardown();
             if(this.player) {
                 this.player.annotationComments = null;
