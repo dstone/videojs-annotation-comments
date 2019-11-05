@@ -23,7 +23,7 @@ module.exports = class PlayerButton extends PlayerUIComponent {
     // Add button to player
     render () {
         let btn = this.player.getChild('controlBar').addChild('button', {});
-        btn.controlText("Toggle Animations");
+        btn.controlText("Toggle Annotations");
         this.$el = $(btn.el());
         this.$el.addClass('vac-player-btn').find(".vjs-icon-placeholder").html(this.renderTemplate(templateName));
     }

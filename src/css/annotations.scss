@@ -209,7 +209,7 @@ $ui-class-play-disabled: ".vac-disable-play";
 	.vac-shape{
 		position: absolute;
 		z-index: 1;
-		background-color: rgba($activeColor, 0.65);
+		//background-color: rgba($activeColor, 0.65);
 		border: 2px dotted $activeColor;
 		display: none;
 	}

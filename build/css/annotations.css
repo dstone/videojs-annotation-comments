@@ -142,7 +142,6 @@
 .video-js .vac-shape {
   position: absolute;
   z-index: 1;
-  background-color: rgba(238, 152, 40, 0.65);
   border: 2px dotted #ee9828;
   display: none; }
 
