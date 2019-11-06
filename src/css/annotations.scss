@@ -1,12 +1,14 @@
-$primaryColor: #00A6C2;		// Primary color, used for buttons and toggle colors
-$secondaryColor: #eed428;	// Secondary color, used for highlight elements and markers
-$activeColor: #ee9828;		// Active color, used for annotation shapes & marker interaction
+$primaryColor: #006990;		// Primary color, used for buttons and toggle colors
+$secondaryColor: #9bcc5a;	// Secondary color, used for highlight elements and markers
+$activeColor: #0bbcbe;		// Active color, used for annotation shapes & marker interaction
 $white: #FFF;
 $black: #000;
 $red: #FF0000;
 
 $medGray: #dbdcdc;
 $darkGray: #383838;
+$lightGray: #e0dfdf;
+
 
 $ui-class-hidden: ".vac-hidden";
 $ui-class-active: ".vac-active";
@@ -105,7 +107,7 @@ $ui-class-play-disabled: ".vac-disable-play";
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba($red,.15);
+		background: rgba($lightGray,.15);
 		cursor: crosshair;
 		.vac-video-cover-canvas{
 			width: 100%;
@@ -209,7 +211,7 @@ $ui-class-play-disabled: ".vac-disable-play";
 	.vac-shape{
 		position: absolute;
 		z-index: 1;
-		//background-color: rgba($activeColor, 0.65);
+		background-color: rgba($activeColor, 0.15);
 		border: 2px dotted $activeColor;
 		display: none;
 	}

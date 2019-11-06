@@ -16348,7 +16348,7 @@ exports["controls"] = Handlebars.template({ "1": function _(container, depth0, h
     }, "2": function _(container, depth0, helpers, partials, data) {
         var stack1;
 
-        return "        <div class=\"vac-controls vac-control\">\n            <button class=\"vac-button\">+ NEW</button>\n" + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? depth0.showNav : depth0, { "name": "if", "hash": {}, "fn": container.program(3, data, 0), "inverse": container.noop, "data": data })) != null ? stack1 : "") + "        </div>\n";
+        return "        <div class=\"vac-controls vac-control\">\n            <button class=\"vac-button\">Add Annotation</button>\n" + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? depth0.showNav : depth0, { "name": "if", "hash": {}, "fn": container.program(3, data, 0), "inverse": container.noop, "data": data })) != null ? stack1 : "") + "        </div>\n";
     }, "3": function _(container, depth0, helpers, partials, data) {
         return "                <div class=\"vac-annotation-nav\">\n                    <div class=\"vac-a-prev\">Prev</div>\n                    <div class=\"vac-a-next\">Next</div>\n                </div>\n";
     }, "5": function _(container, depth0, helpers, partials, data) {
@@ -16359,9 +16359,9 @@ exports["controls"] = Handlebars.template({ "1": function _(container, depth0, h
     }, "6": function _(container, depth0, helpers, partials, data) {
         var stack1;
 
-        return "        <div class=\"vac-add-controls vac-control\">\n            <i>Select shape + range</i>\n" + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? depth0.internalCommenting : depth0, { "name": "if", "hash": {}, "fn": container.program(7, data, 0), "inverse": container.noop, "data": data })) != null ? stack1 : "") + "            <div class=\"vac-video-move\">\n                <div class=\"vac-a-prev\">-1 sec</div>\n                <div class=\"vac-a-next\">+1 sec</div>\n            </div>\n        </div>\n";
+        return "        <div class=\"vac-add-controls vac-control\">\n            <i>Select area to highlight</i>\n" + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? depth0.internalCommenting : depth0, { "name": "if", "hash": {}, "fn": container.program(7, data, 0), "inverse": container.noop, "data": data })) != null ? stack1 : "") + "            <div class=\"vac-video-move\">\n                <div class=\"vac-a-prev\">-1 sec</div>\n                <div class=\"vac-a-next\">+1 sec</div>\n            </div>\n        </div>\n";
     }, "7": function _(container, depth0, helpers, partials, data) {
-        return "                <button class=\"vac-button\">CONTINUE</button>\n                <a>cancel</a>\n";
+        return "                <button class=\"vac-button\">Add Comment</button>\n                <a>cancel</a>\n";
     }, "9": function _(container, depth0, helpers, partials, data) {
         var helper;
 

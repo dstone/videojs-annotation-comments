@@ -8,7 +8,7 @@
   z-index: 2; }
 
 .video-js.vac-active .vac-player-btn i.vac-player-icon svg {
-  fill: #00A6C2 !important; }
+  fill: #006990 !important; }
 
 .video-js.vac-active.vjs-has-started .vac-shape {
   display: block; }
@@ -38,12 +38,12 @@
   width: calc(100% - 20px);
   text-align: center;
   border-radius: 2px;
-  background: #00A6C2;
+  background: #006990;
   color: white;
   display: block;
   cursor: pointer; }
   .video-js .vac-button:hover {
-    background-color: #10dcff; }
+    background-color: #00a1dd; }
 
 .video-js .vac-video-cover {
   z-index: 1;
@@ -52,7 +52,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 0, 0, 0.15);
+  background: rgba(224, 223, 223, 0.15);
   cursor: crosshair; }
   .video-js .vac-video-cover .vac-video-cover-canvas {
     width: 100%;
@@ -98,7 +98,7 @@
       background-color: white;
       margin-top: 20px;
       width: 100%;
-      border-bottom: 2px solid #ee9828; }
+      border-bottom: 2px solid #0bbcbe; }
       .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox textarea {
         border: none;
         font-size: 13px;
@@ -142,7 +142,8 @@
 .video-js .vac-shape {
   position: absolute;
   z-index: 1;
-  border: 2px dotted #ee9828;
+  background-color: rgba(11, 188, 190, 0.15);
+  border: 2px dotted #0bbcbe;
   display: none; }
 
 .video-js .vac-controls, .video-js .vac-add-controls {
@@ -175,17 +176,17 @@
     width: calc(100% - 20px);
     text-align: center;
     border-radius: 2px;
-    background: #00A6C2;
+    background: #006990;
     color: white;
     display: block;
     cursor: pointer; }
     .video-js .vac-controls button:hover, .video-js .vac-add-controls button:hover {
-      background-color: #10dcff; }
+      background-color: #00a1dd; }
   .video-js .vac-controls.vac-add-controls button, .video-js .vac-add-controls.vac-add-controls button {
-    background-color: #eed428;
+    background-color: #9bcc5a;
     color: #383838; }
     .video-js .vac-controls.vac-add-controls button:hover, .video-js .vac-add-controls.vac-add-controls button:hover {
-      background-color: #f4e26f; }
+      background-color: #bede94; }
   .video-js .vac-controls.vac-add-controls a, .video-js .vac-add-controls.vac-add-controls a {
     margin: 3px auto 8px;
     text-transform: uppercase;
@@ -213,13 +214,13 @@
       background-color: rgba(0, 0, 0, 0.8);
       text-align: center;
       line-height: 22px;
-      color: #eed428;
+      color: #9bcc5a;
       -webkit-transition: all .2s ease-in-out;
       transition: all .2s ease-in-out;
       cursor: pointer;
       font-size: 12px; }
       .video-js .vac-controls .vac-annotation-nav div:hover, .video-js .vac-controls .vac-video-move div:hover, .video-js .vac-add-controls .vac-annotation-nav div:hover, .video-js .vac-add-controls .vac-video-move div:hover {
-        background-color: #eed428;
+        background-color: #9bcc5a;
         color: #000; }
       .video-js .vac-controls .vac-annotation-nav div.vac-a-prev, .video-js .vac-controls .vac-video-move div.vac-a-prev, .video-js .vac-add-controls .vac-annotation-nav div.vac-a-prev, .video-js .vac-add-controls .vac-video-move div.vac-a-prev {
         margin-right: 1px; }
@@ -239,7 +240,7 @@
     -webkit-transition: fill .2s ease-in-out;
     transition: fill .2s ease-in-out; }
   .video-js .vac-player-btn i.vac-player-icon:hover svg {
-    fill: #5ce7ff; }
+    fill: #2ac5ff; }
   .video-js .vac-player-btn b {
     position: absolute;
     display: inline-block;
@@ -276,36 +277,36 @@
       margin-left: 0px;
       height: 30px;
       bottom: 6px;
-      background: #00A6C2;
+      background: #006990;
       border-radius: 2px;
       cursor: pointer;
       -webkit-transition: all .2s ease-in-out;
       transition: all .2s ease-in-out; }
       .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-hovering, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-force-tooltip, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-hovering, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-force-tooltip {
         opacity: 1 !important;
-        background: #eed428;
+        background: #9bcc5a;
         height: 35px; }
         .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-hovering > div, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-force-tooltip > div, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-hovering > div, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-force-tooltip > div {
           display: block;
           opacity: 1; }
         .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-hovering.vac-ranged-marker, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-force-tooltip.vac-ranged-marker, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-hovering.vac-ranged-marker, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-force-tooltip.vac-ranged-marker {
-          -webkit-box-shadow: 7px 0 0 0 #eed428 inset;
-          box-shadow: 7px 0 0 0 #eed428 inset;
-          background-color: rgba(238, 212, 40, 0.65); }
+          -webkit-box-shadow: 7px 0 0 0 #9bcc5a inset;
+          box-shadow: 7px 0 0 0 #9bcc5a inset;
+          background-color: rgba(155, 204, 90, 0.65); }
       .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-active, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-active {
-        background-color: #eed428; }
+        background-color: #9bcc5a; }
         .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-active.vac-ranged-marker, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-active.vac-ranged-marker {
-          -webkit-box-shadow: 7px 0 0 0 #eed428 inset;
-          box-shadow: 7px 0 0 0 #eed428 inset;
-          background-color: rgba(238, 212, 40, 0.65); }
+          -webkit-box-shadow: 7px 0 0 0 #9bcc5a inset;
+          box-shadow: 7px 0 0 0 #9bcc5a inset;
+          background-color: rgba(155, 204, 90, 0.65); }
       .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-ranged-marker, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-ranged-marker {
-        -webkit-box-shadow: 7px 0 0 0 #00A6C2 inset;
-        box-shadow: 7px 0 0 0 #00A6C2 inset;
-        background-color: rgba(0, 166, 194, 0.65); }
+        -webkit-box-shadow: 7px 0 0 0 #006990 inset;
+        box-shadow: 7px 0 0 0 #006990 inset;
+        background-color: rgba(0, 105, 144, 0.65); }
       .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-marker-draggable, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-marker-draggable {
-        -webkit-box-shadow: 7px 0 0 0 #ee9828 inset;
-        box-shadow: 7px 0 0 0 #ee9828 inset;
-        background-color: rgba(238, 152, 40, 0.65);
+        -webkit-box-shadow: 7px 0 0 0 #0bbcbe inset;
+        box-shadow: 7px 0 0 0 #0bbcbe inset;
+        background-color: rgba(11, 188, 190, 0.65);
         cursor: ew-resize;
         min-width: 7px !important; }
       .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker > div, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable > div {
@@ -318,7 +319,7 @@
         .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker > div span, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable > div span {
           text-overflow: ellipsis;
           white-space: nowrap;
-          border-bottom: 1px solid #eed428;
+          border-bottom: 1px solid #9bcc5a;
           display: block;
           position: absolute;
           max-width: 250px;
@@ -336,7 +337,7 @@
           font-size: 12px;
           left: 0px; }
           .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker > div span b, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable > div span b {
-            color: #eed428;
+            color: #9bcc5a;
             display: inline-block;
             margin-right: 5px;
             font-weight: normal; }
@@ -443,7 +444,7 @@
       display: none; }
   .video-js .vac-comments-container .vac-comments-control-bar {
     height: 26px;
-    border-bottom: 1px solid #eed428;
+    border-bottom: 1px solid #9bcc5a;
     line-height: 26px;
     padding: 0 10px;
     -webkit-box-sizing: border-box;
@@ -456,7 +457,7 @@
       .video-js .vac-comments-container .vac-comments-control-bar .vac-range.vac-range, .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons.vac-range {
         float: left;
         text-align: left;
-        color: #eed428; }
+        color: #9bcc5a; }
         .video-js .vac-comments-container .vac-comments-control-bar .vac-range.vac-range b, .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons.vac-range b {
           color: white; }
     .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons {
