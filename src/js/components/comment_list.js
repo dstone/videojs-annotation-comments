@@ -33,6 +33,7 @@ module.exports = class CommentList extends PlayerUIComponent {
         this.$el
             .on("click.vac-comment", ".vac-close-comment-list", (() => this.annotation.close()).bind(this)) // Hide CommentList UI with close button
             .on("click.vac-comment", ".vac-reply-btn", this.addNewComment.bind(this)) // Open new reply UI with reply button
+            .on("click.vac-comment", ".vac-reply-link", this.addNewComment.bind(this)) // Open new reply UI with reply button
             .on("click.vac-comment", ".vac-delete-annotation", this.handleDeleteAnnotationClick.bind(this)) // Delete annotation with main delete button
             .on("click.vac-comment", ".vac-delete-comment", this.destroyComment.bind(this)) // Delete comment with delete comment button
             .on("mousewheel.vac-comment DOMMouseScroll.vac-comment", ".vac-comments-wrap", this.disablePageScroll.bind(this)); // Prevent outer page scroll when scrolling inside of the CommentList UI

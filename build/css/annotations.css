@@ -152,8 +152,8 @@
   border-radius: 2px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.4);
-  top: 4px;
-  left: 4px;
+  bottom: 42px;
+  right: 4px;
   padding: 4px 0 0 0;
   font-size: 14px;
   color: white;
@@ -354,10 +354,10 @@
   right: 0;
   top: 0;
   width: 15%;
-  min-width: 225px;
+  min-width: 255px;
   z-index: 11;
   background-color: rgba(255, 255, 255, 0.6);
-  height: calc(100% - 42px);
+  height: calc(100% - 120px);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all .15s linear;
@@ -455,10 +455,13 @@
       width: 49%; }
       .video-js .vac-comments-container .vac-comments-control-bar .vac-range.vac-range, .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons.vac-range {
         float: left;
+        width: 25%;
         text-align: left;
         color: #9bcc5a; }
         .video-js .vac-comments-container .vac-comments-control-bar .vac-range.vac-range b, .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons.vac-range b {
           color: white; }
+      .video-js .vac-comments-container .vac-comments-control-bar .vac-range.vac-control-buttons, .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons.vac-control-buttons {
+        min-width: 160px; }
     .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons {
       float: right;
       text-align: right;
@@ -469,5 +472,7 @@
         color: red; }
         .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons a.vac-close-comment-list {
           color: white; }
+        .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons a.vac-reply-link {
+          color: #9bcc5a; }
         .video-js .vac-comments-container .vac-comments-control-bar .vac-control-buttons a:hover {
           text-decoration: underline; }

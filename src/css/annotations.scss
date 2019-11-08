@@ -227,8 +227,8 @@ $ui-class-play-disabled: ".vac-disable-play";
 		border-radius: 2px;
 		overflow: hidden;
 		background-color: rgba($black,.4);
-		top: 4px;
-		left: 4px;
+		bottom: 42px;
+		right: 4px;
 		padding: 4px 0 0 0;
 		font-size: 14px;
 		color: white;
@@ -475,10 +475,10 @@ $ui-class-play-disabled: ".vac-disable-play";
 	    right: 0;
 	    top: 0;
 	    width: 15%;
-	    min-width: 225px;
+	    min-width: 255px;
 	    z-index: 11;
 		background-color: rgba($white, 0.60);
-		height: calc(100% - 42px);
+		height: calc(100% - 120px);
 		box-sizing: border-box;
 		transition: all .15s linear;
 		// When hovering over or interacting with comments list, toggle opacity and slide out
@@ -602,12 +602,16 @@ $ui-class-play-disabled: ".vac-disable-play";
 				width: 49%;
 				&.vac-range {
 					float: left;
+					width: 25%;
 					text-align: left;
 					color: $secondaryColor;
 					b{
 						color: white;
 					}
 				}
+              &.vac-control-buttons {
+				  min-width: 160px;
+			  }
 			}
 			.vac-control-buttons {
 				float: right;
@@ -619,6 +623,9 @@ $ui-class-play-disabled: ".vac-disable-play";
 					color: red;
 					&.vac-close-comment-list{
 						color: white;
+					}
+					&.vac-reply-link {
+						color: $secondaryColor;
 					}
 					&:hover{
 						text-decoration: underline;

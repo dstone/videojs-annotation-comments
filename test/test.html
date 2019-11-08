@@ -114,6 +114,7 @@
 		<script src="/videojs-annotation-comments.js"></script>
 		<script>
 			//window.VAC_DEBUG = true;
+			videojs.registerPlugin( "annotationComments", AnnotationComments(videojs) );
 
 			var videos = [],
 				playerOptions = { controlBar: { volumePanel: { inline: false } } },
