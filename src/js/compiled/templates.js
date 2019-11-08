@@ -29,7 +29,7 @@ exports["comment_list"] = Handlebars.template({"1":function(container,depth0,hel
 
   return "<div class=\"vac-comments-container\">\n  <div class=\"vac-comments-wrap\">\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.commentsHTML : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
-    + "    <div class=\"vac-reply-btn vac-button\">ADD REPLY</div>\n    <div class=\"vac-add-new-shapebox\"></div>\n  </div>\n  <div class=\"vac-comments-control-bar\">\n    <div class=\"vac-range\"><b>@</b> "
+    + "    <!--<div class=\"vac-reply-btn vac-button\">ADD REPLY</div>-->\n    <div class=\"vac-add-new-shapebox\"></div>\n  </div>\n  <div class=\"vac-comments-control-bar\">\n    <div class=\"vac-range\"><b>@</b> "
     + container.escapeExpression(((helper = (helper = helpers.rangeStr || (depth0 != null ? depth0.rangeStr : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"rangeStr","hash":{},"data":data,"blockParams":blockParams}) : helper)))
     + "</div>\n    <div class=\"vac-control-buttons\">\n        <a class=\"vac-reply-link\">REPLY</a> |\n"
     + ((stack1 = helpers.unless.call(alias1,(depth0 != null ? depth0.disableDelete : depth0),{"name":"unless","hash":{},"fn":container.program(3, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
