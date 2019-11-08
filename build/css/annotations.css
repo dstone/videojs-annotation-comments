@@ -142,8 +142,8 @@
 .video-js .vac-shape {
   position: absolute;
   z-index: 1;
-  background-color: rgba(11, 188, 190, 0.15);
-  border: 2px dotted #0bbcbe;
+  border: 2px solid #FF00FF;
+  outline: 1px solid #FF33FF;
   display: none; }
 
 .video-js .vac-controls, .video-js .vac-add-controls {
@@ -276,8 +276,7 @@
       width: 7px;
       margin-left: 0px;
       height: 30px;
-      bottom: 6px;
-      background: #006990;
+      background: #d84765;
       border-radius: 2px;
       cursor: pointer;
       -webkit-transition: all .2s ease-in-out;
@@ -300,9 +299,9 @@
           box-shadow: 7px 0 0 0 #9bcc5a inset;
           background-color: rgba(155, 204, 90, 0.65); }
       .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-ranged-marker, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-ranged-marker {
-        -webkit-box-shadow: 7px 0 0 0 #006990 inset;
-        box-shadow: 7px 0 0 0 #006990 inset;
-        background-color: rgba(0, 105, 144, 0.65); }
+        -webkit-box-shadow: 7px 0 0 0 #d84765 inset;
+        box-shadow: 7px 0 0 0 #d84765 inset;
+        background-color: rgba(216, 71, 101, 0.65); }
       .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker.vac-marker-draggable, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable.vac-marker-draggable {
         -webkit-box-shadow: 7px 0 0 0 #0bbcbe inset;
         box-shadow: 7px 0 0 0 #0bbcbe inset;

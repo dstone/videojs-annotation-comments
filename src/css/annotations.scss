@@ -1,6 +1,9 @@
 $primaryColor: #006990;		// Primary color, used for buttons and toggle colors
 $secondaryColor: #9bcc5a;	// Secondary color, used for highlight elements and markers
 $activeColor: #0bbcbe;		// Active color, used for annotation shapes & marker interaction
+$shapeColor: #FF00FF;
+$shapeOutlineColor: #FF33FF;
+$markerColor: #d84765;
 $white: #FFF;
 $black: #000;
 $red: #FF0000;
@@ -211,8 +214,9 @@ $ui-class-play-disabled: ".vac-disable-play";
 	.vac-shape{
 		position: absolute;
 		z-index: 1;
-		background-color: rgba($activeColor, 0.15);
-		border: 2px dotted $activeColor;
+		//background-color: rgba($shapeColor, 0.15);
+		border: 2px solid $shapeColor;
+		outline: 1px solid $shapeOutlineColor;
 		display: none;
 	}
 
@@ -369,8 +373,8 @@ $ui-class-play-disabled: ".vac-disable-play";
 				width: 7px;
 				margin-left: 0px;
 				height: 30px;
-				bottom: 6px;
-				background: $primaryColor;
+				//bottom: 6px;
+				background: $markerColor;
 				border-radius: 2px;
 				cursor: pointer;
 				transition: all .2s ease-in-out;
@@ -398,8 +402,8 @@ $ui-class-play-disabled: ".vac-disable-play";
 				}
 				// Range markers have 'tail' drawn with box shadow
 				&.vac-ranged-marker{
-					box-shadow: 7px 0 0 0 $primaryColor inset;
-					background-color: rgba($primaryColor, 0.65);
+					box-shadow: 7px 0 0 0 $markerColor inset;
+					background-color: rgba($markerColor, 0.65);
 				}
 				// Ranged markers use different color than regular markers (and are always range markers)
 				&.vac-marker-draggable{
